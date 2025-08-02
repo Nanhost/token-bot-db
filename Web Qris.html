@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nan Market - QRIS Payment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+    }
+    .qr-container {
+      position: relative;
+      padding: 1rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .qr-placeholder {
+      border: 2px dashed #e53e3e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .payment-step {
+      transition: all 0.3s ease;
+    }
+    .payment-step:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 flex flex-col">
+  <div class="container mx-auto px-4 py-8 flex-1 flex flex-col">
+    <div class="text-center mb-6">
+      <h1 class="text-3xl md:text-4xl font-bold text-red-600">Nan Market</h1>
+      <p class="text-lg text-gray-600 mt-2 mb-8">Simple Payments, Modern Experience</p>
+    </div>
+
+    <div class="max-w-md mx-auto w-full">
+      <div class="qr-container">
+        <div class="text-center mb-4">
+          <h2 class="text-xl font-semibold text-gray-800">Pay with QRIS</h2>
+          <p class="text-sm text-gray-500 mt-1">Instant payment with any e-wallet or bank app</p>
+        </div>
+        
+        <div class="qr-placeholder mb-4">
+          <img 
+            src="https://img1.pixhost.to/images/7487/625961338_erlangga.jpg" 
+            alt="QRIS payment code for Nan Market with white background and red QR pattern, Indonesian Standard QR Code for mobile payments"
+            class="w-full max-w-xs mx-auto"
+            onerror="this.parentElement.innerHTML='Place QR Code Image Here'"
+          />
+        </div>
+
+        <p class="text-center text-sm text-gray-600 italic">
+          "Satu QRIS Untuk Semua – Pay with any e-wallet or banking app."
+        </p>
+
+        <div class="mt-6 p-4 bg-red-50 rounded-lg">
+          <h3 class="font-medium text-red-700 mb-2">Merchant Information</h3>
+          <div class="text-sm space-y-1">
+            <p><span class="font-medium">Merchant ID:</span> 93600816</p>
+            <p><span class="font-medium">Version:</span> 1.0-2023.05.26</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <h3 class="text-lg font-semibold text-center text-gray-800 mb-6">How to Pay with QRIS</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="payment-step bg-white p-4 rounded-lg shadow-sm text-center">
+            <div class="h-16 w-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e308a16c-b3d4-48d9-b68e-4ddd521e0c39.png" alt="Mobile phone icon with e-wallet app icon on screen in red color" class="h-8 w-8" />
+            </div>
+            <h4 class="font-medium">1. Open App</h4>
+            <p class="text-sm text-gray-500 mt-1">Launch your e-wallet or banking app</p>
+          </div>
+
+          <div class="payment-step bg-white p-4 rounded-lg shadow-sm text-center">
+            <div class="h-16 w-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b054af55-220c-49d4-ba37-2e6b77bbbbb6.png" alt="QR code icon with scanning motion lines animation concept in red color" class="h-8 w-8" />
+            </div>
+            <h4 class="font-medium">2. Scan QR Code</h4>
+            <p class="text-sm text-gray-500 mt-1">Point your camera at this QR code</p>
+          </div>
+
+          <div class="payment-step bg-white p-4 rounded-lg shadow-sm text-center">
+            <div class="h-16 w-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/06efb324-d291-4d24-a9e7-ac1ed65681ce.png" alt="Checkmark icon inside circle representing payment confirmation in red color" class="h-8 w-8" />
+            </div>
+            <h4 class="font-medium">3. Confirm Payment</h4>
+            <p class="text-sm text-gray-500 mt-1">Verify and approve the payment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-white py-4 border-t">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm text-gray-500">© 2023 Nan Market. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple hover effect enhancement
+    document.querySelectorAll('.payment-step').forEach(step => {
+      step.addEventListener('mouseenter', () => {
+        step.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+      });
+      step.addEventListener('mouseleave', () => {
+        step.style.boxShadow = '0 1px 3px 0 rgba(0, 0, 0, 0.1)';
+      });
+    });
+  </script>
+</body>
+</html>
+
